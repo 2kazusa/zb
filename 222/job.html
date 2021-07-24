@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>job_1</title>
+</head>
+<body>
+    <div id="job1" style="width:1100px;height:600px"></div>
+</body>
+<script src="/static/js/jquery-1.11.0.min.js"></script>
+<script src="/static/js/echarts.min.js"></script>
+<script type="text/javascript">
+    mychart = echarts.init(document.getElementById("job1"));
+    option = {
+    xAxis: {
+        type: 'category',
+        axisLabel:{
+            interval:0,
+            rotate:15
+        },
+        data: {{!job}}
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: {{num}},
+        type: 'line'
+    }]
+};
+    mychart.setOption(option);
+</script>
+</html>
